@@ -9,6 +9,27 @@
 <%- include('../partials/head.ejs', { title: 'Badges | Wildlife Watch', cssFiles: ['/styles/badges.css'] }) %>
 
 
+<style>
+#map {
+        height: 100%;
+        width: 100%;
+      }
+
+          .image-container {
+        width: 70%;
+        height: 550px;
+        margin: 50px auto;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+        .image-container img {
+            height: 100%;
+            width: 100%;
+        }
+</style>
+
 <body>
 
 
@@ -16,12 +37,54 @@
 <%- include('../partials/nav.ejs') %>
 <%- include('../partials/secondnav.ejs') %>
 
+<div class="image-container" id="imageContainer">
+    <img src="img/heatmap.png" />
+</div>
 
+
+ <div id="map"></div>
+    <script>
+      let map;
+      function initMap() {
+        // Create a map centered on Aberdeen, UK.
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 57.1497, lng: -2.0943 },
+          zoom: 12
+        });
+        
+        // Define the heatmap data.
+        const heatmapData = [
+          new google.maps.LatLng(57.1497, -2.0943),
+          new google.maps.LatLng(57.1510, -2.0950),
+          new google.maps.LatLng(57.1450, -2.0930),
+          new google.maps.LatLng(57.1600, -2.1000)
+        ];
+        
+        // Create the heatmap layer.
+        const heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatmapData,
+          map: map,
+          radius: 20
+        });
+        
+        // Optionally adjust the gradient.
+        heatmap.set('gradient', [
+          'rgba(0, 255, 255, 0)',
+          'rgba(0, 255, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 127, 255, 1)',
+          'rgba(0, 63, 255, 1)',
+          'rgba(0, 0, 255, 1)',
+          'rgba(255, 0, 0, 1)'
+        ]);
+      }
+    </script>
 
 <%- include('../partials/footer.ejs') %>
 
     <script src="scripts/badges.js"></script>
 </body>
+
 
 </html>
 

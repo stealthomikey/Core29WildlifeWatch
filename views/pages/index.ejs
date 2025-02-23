@@ -5,6 +5,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<script>
+    function submitRegisterForm(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form values
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Send the data using fetch
+        fetch('http://localhost:3500/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+            first_name: first_name,
+            last_name: last_name,
+            username: username,
+            email: email,
+            password: password,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally handle the response, e.g., redirect or display a success message
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+    function submitLoginForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Create a new FormData object from the form
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+
+        // Send the form data using fetch
+        fetch('http://localhost:3500/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally handle the response, e.g., redirect or display success message
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+
+</script>
+
 <!-- Include the head -->
 <%- include('../partials/head.ejs', { title: 'Home | Wildlife Watch', cssFiles: ['/styles/home.css'] }) %>
 
@@ -17,49 +83,47 @@
 
     <div class="container">
         <div class="form-box login">
-            <form action="#">
+            <form id="loginForm" method="POST" onsubmit="submitLoginForm(event)">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="email" name="email" placeholder="Email" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
                     <a href="#">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn">Login</button>
-
             </form>
         </div>
 
         <div class="form-box register">
-            <form action="POST">
+            <form id="registerForm" method="POST" onsubmit="submitRegisterForm(event)">
                 <h1>Registration</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="First Name" required>
+                    <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Last Name" required>
+                    <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope' ></i>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <button type="submit" class="btn">Register</button>
-
             </form>
         </div>
 
@@ -79,6 +143,7 @@
     </div>
 
 <%- include('../partials/footer.ejs') %>
+
 
     <script src="scripts/home.js"></script>
 </body>

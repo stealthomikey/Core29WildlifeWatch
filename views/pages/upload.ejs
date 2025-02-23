@@ -9,6 +9,7 @@
 <%- include('../partials/head.ejs', { title: 'Upload | Wildlife Watch', cssFiles: ['/styles/upload.css'] }) %>
 
 
+<div class="loader"></div>
 <body>
 
 
@@ -40,16 +41,17 @@
 <p>Please type and select the animal you spotted!</p>
 
 <div class="dropdown">
-  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" onfocus="showDropdown()" onblur="hideDropdown()">
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" onfocus="showDropdown()" onblur="hideDropdown()">
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#" class="animal-option">Badger</a>
+      <a href="#" class="animal-option">Bird</a>
+      <a href="#" class="animal-option">Chicken</a>
+      <a href="#" class="animal-option">Deer</a>
+      <a href="#" class="animal-option">Dog</a>
+      <a href="#" class="animal-option">Fox</a>
+      <a href="#" class="animal-option">Rabbit</a>
+      <a href="#" class="animal-option">Squirrel</a>
+    </div>
 </div>
 <br>
 <br>
@@ -63,12 +65,17 @@
     <input type="hidden" id="longitude" name="longitude">
 </div>
   
+
 <!-- Upload button positioned below the image container -->
 <div class="button-container">
   <button id="openUpload">Confirm Location</button>
 </div>
 <br>
 
+
+<div class="button-container">
+  <button onclick="saveSpotting()" id="openUpload">Save Spotting</button>
+</div>
 
 <%- include('../partials/footer.ejs') %>
 <script async defer
@@ -77,4 +84,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Bx4Lm_LKUEIIXWEk94u1G0r
     <script src="scripts/upload.js"></script>
 </body>
 
+<script>
+function saveSpotting() {
+    document.getElementsByClassName("loader")[0].style.display = "block";
+    document.body.classList.add('loading-body');
+}
+</script>
 </html>
