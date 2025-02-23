@@ -41,6 +41,11 @@ app.get('/upload', (req, res) => {
     res.render('pages/upload');
 });
 
+// Route to render the upload.ejs page
+app.get('/data', (req, res) => {
+  res.render('pages/data');
+});
+
 // Multer configuration for image upload
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

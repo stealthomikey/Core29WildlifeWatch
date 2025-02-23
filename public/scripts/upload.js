@@ -52,3 +52,41 @@ function showDropdown() {
       a[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
     }
   }
+
+  
+
+
+  window.initMap = function () {
+    let map;
+    let marker;
+
+    const initialPosition = { lat: 54.7023545, lng: -3.2765753 };
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: initialPosition
+    });
+
+    map.addListener('click', (e) => {
+        if (marker) {
+            marker.setMap(null);
+        }
+
+        marker = new google.maps.Marker({
+            position: e.latLng,
+            map: map,
+            draggable: true
+        });
+
+        document.getElementById('latitude').value = e.latLng.lat();
+        document.getElementById('longitude').value = e.latLng.lng();
+
+        console.log("Marker placed at:", e.latLng.lat(), e.latLng.lng());
+
+        marker.addListener('dragend', (event) => {
+            document.getElementById('latitude').value = event.latLng.lat();
+            document.getElementById('longitude').value = event.latLng.lng();
+            console.log("Marker moved to:", event.latLng.lat(), event.latLng.lng());
+        });
+    });
+};

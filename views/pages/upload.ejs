@@ -54,10 +54,14 @@
 <br>
 <br>
 <br>
+
 <h2>Drop a pin in the area you saw the animal!</h2>
 </div>
-
-<div class="image-container" id="imageContainer"></div>
+<div class="map-container">
+    <div id="map"></div>
+    <input type="hidden" id="latitude" name="latitude">
+    <input type="hidden" id="longitude" name="longitude">
+</div>
   
 <!-- Upload button positioned below the image container -->
 <div class="button-container">
@@ -67,7 +71,9 @@
 
 
 <%- include('../partials/footer.ejs') %>
-
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Bx4Lm_LKUEIIXWEk94u1G0rSz0AmSCY&callback=initMap">
+</script>
     <script src="scripts/upload.js"></script>
 </body>
 
