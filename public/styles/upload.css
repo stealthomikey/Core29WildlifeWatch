@@ -1,0 +1,111 @@
+    /* Image container: 80% of the viewport width, square using aspect-ratio */
+    .image-container {
+        width: 70%;
+        height: 400px;
+        margin: 50px auto;
+        border: 2px dashed #ccc;
+        background-color: #f9f9f9;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      /* Container for the upload button, positioned below the image container */
+      .button-container {
+        width: 70%;
+        margin: 0 auto;
+        text-align: right;
+      }
+      /* Styling for the upload button */
+      #openUpload {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      /* Overlay styling for the upload form */
+      .upload-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .upload-overlay.active {
+        display: flex;
+      }
+      /* Styling for the upload form */
+      .upload-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+      .upload-form input[type="file"] {
+        margin-bottom: 10px;
+      }
+      .upload-form button {
+        padding: 8px 16px;
+        background-color: #28A745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      #myInput {
+        box-sizing: border-box;
+        width: 230px;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #myInput:focus {
+        outline: 3px solid #ddd;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+      
+      .show {
+        display: block;
+      }
+
+      .Search {
+        margin-left: 15%;
+      }

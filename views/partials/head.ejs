@@ -1,0 +1,18 @@
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <!-- link to shared CSS -->
+    <link rel="stylesheet" type="text/css" href="styles/nav.css">
+    <link rel="stylesheet" type="text/css" href="styles/footer.css">
+
+    <!-- favicon with conditional paths -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    
+    <% if(cssFiles && cssFiles.length > 0) { %>
+        <!-- Additional CSS files -->
+        <% cssFiles.forEach(function(file) { %>
+            <link rel="stylesheet" type="text/css" href="<%= file %>">
+        <% }) %>
+    <% } %>
+</head>

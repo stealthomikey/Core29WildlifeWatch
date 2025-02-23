@@ -1,0 +1,74 @@
+<!--
+    Created by Michael Piercey 2206222
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include the head -->
+<%- include('../partials/head.ejs', { title: 'Upload | Wildlife Watch', cssFiles: ['/styles/upload.css'] }) %>
+
+
+<body>
+
+
+<!-- Include the navbar -->
+<%- include('../partials/nav.ejs') %>
+<div class="Search">
+<h2>Upload your photo of the animal!</h2>
+</div>
+<div class="image-container" id="imageContainer"></div>
+  
+<!-- Upload button positioned below the image container -->
+<div class="button-container">
+  <button id="openUpload">Upload Image</button>
+</div>
+
+<!-- Upload Overlay (Hidden by Default) -->
+<div class="upload-overlay" id="uploadOverlay">
+    <div class="upload-form">
+        <form id="imageUploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="photo" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+
+<div class="Search">
+
+<h2>Animal</h2>
+<p>Please type and select the animal you spotted!</p>
+
+<div class="dropdown">
+  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" onfocus="showDropdown()" onblur="hideDropdown()">
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#about">About</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<h2>Drop a pin in the area you saw the animal!</h2>
+</div>
+
+<div class="image-container" id="imageContainer"></div>
+  
+<!-- Upload button positioned below the image container -->
+<div class="button-container">
+  <button id="openUpload">Confirm Location</button>
+</div>
+<br>
+
+
+<%- include('../partials/footer.ejs') %>
+
+    <script src="scripts/upload.js"></script>
+</body>
+
+</html>

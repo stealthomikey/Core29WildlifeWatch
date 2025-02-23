@@ -1,0 +1,79 @@
+/*
+    Created by Michael Piercey 2206222 -- finalised 08/12/23
+*/
+
+  .custom-row {
+    display: flex;
+  }
+  
+  .custom-footer {
+    background-color: #3D8D7A;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--text-colour3);
+    padding-left: 5px;
+    margin-top: auto;
+  }
+  
+  .custom-footer h6 {
+    color: var(--text-colour3);
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+  }
+  
+  .footer-links {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .footer-links a {
+    color: var(--text-colour2);
+    text-decoration: none;
+  }
+  
+  .footer-links a:active,
+  .footer-links a:focus,
+  .footer-links a:hover {
+    color: var(--text-colour1);
+  }
+  
+  /* Custom styles for column widths */
+  .about-column {
+    flex: 40%;
+  }
+
+  .credits{
+    width: 80%;
+  }
+  
+  .categories-column,
+  .quick-links-column {
+    flex: 30%;
+  }
+  
+
+
+  @media screen and (max-width: 768px) {
+    .custom-row {
+        flex-direction: column;
+    }
+    
+    .custom-footer {
+        text-align: center; 
+    }
+
+    .credits {
+      width: 100%;
+    }
+    
+    .footer-links {
+        margin-top: 15px; 
+    }
+    
+    .custom-container {
+        padding: 0 15px; 
+    }
+}

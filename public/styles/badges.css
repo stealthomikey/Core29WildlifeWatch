@@ -1,0 +1,100 @@
+.badges-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    position: relative;
+    width: 140px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wreath {
+    width: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.wreath svg {
+    width: 100%;
+    height: 100%;
+}
+
+.leaves {
+    fill: #5a7d4a;
+    stroke: #3a5d2a;
+    stroke-width: 0.5;
+}
+
+.ribbon {
+    fill: #c24545;
+}
+
+.medal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.tier-icon {
+    font-size: 2em;
+    transform: translateY(-5%);
+}
+
+.name-plate {
+    width: 100%;
+    padding: 8px;
+    background: #4a4a4a;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: -10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Tier Colors */
+.bronze .medal { background: linear-gradient(145deg, #cd7f32, #b3692b); color: #fff3e0; }
+.silver .medal { background: linear-gradient(145deg, #c0c0c0, #a0a0a0); color: #f8f8f8; }
+.gold .medal { background: linear-gradient(145deg, #ffd700, #d4af37); color: #fffacd; }
+
+.bronze .ribbon { fill: #cd7f32; }
+.silver .ribbon { fill: #a0a0a0; }
+.gold .ribbon { fill: #d4af37; }
+
+/* Hover Effects */
+.badge:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.badge:hover .medal {
+    filter: brightness(110%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.badge:hover .name-plate {
+    background: #5a5a5a;
+}

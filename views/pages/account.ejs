@@ -1,0 +1,88 @@
+<!--
+    Created by Michael Piercey 2206222
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include the head -->
+<%- include('../partials/head.ejs', { title: 'Account | Wildlife Watch', cssFiles: ['/styles/account.css'] }) %>
+
+
+<body>
+
+
+<!-- Include the navbar -->
+<%- include('../partials/nav.ejs') %>
+<%- include('../partials/secondnav.ejs') %>
+
+<div class="account-card">
+    <div class="account-header">
+        <div class="user-identifier">
+            <div class="color-block" style="background: linear-gradient(135deg, #3D8D7A 0%, #A3D1C6 100%);">
+                <span class="user-initials">JD</span>
+            </div>
+        </div>
+        <h2>Account Settings</h2>
+    </div>
+
+    <form class="account-form">
+        <div class="form-section">
+            <div class="color-stripe" style="background: linear-gradient(90deg, #3D8D7A 0%, #A3D1C6 100%);"></div>
+            <div class="form-grid">
+                <div class="input-group accent-purple">
+                    <label>First Name</label>
+                    <div class="input-container">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" value="John" class="form-input">
+                    </div>
+                </div>
+                <div class="input-group accent-blue">
+                    <label>Last Name</label>
+                    <div class="input-container">
+                        <i class="fas fa-users input-icon"></i>
+                        <input type="text" value="Doe" class="form-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="color-stripe" style="background: linear-gradient(90deg, #A3D1C6 0%, #3D8D7A 100%);"></div>
+            <div class="input-group accent-green">
+                <label>Username</label>
+                <div class="input-container">
+                    <i class="fas fa-at input-icon"></i>
+                    <input type="text" value="johndoe92" class="form-input">
+                </div>
+            </div>
+            <div class="input-group accent-cyan">
+                <label>Email Address</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" value="john.doe@example.com" class="form-input">
+                </div>
+            </div>
+            <div class="input-group accent-indigo">
+                <label>Password</label>
+                <div class="input-container">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" value="currentpassword" class="form-input">
+                    <i class="toggle-password fas fa-eye" onclick="togglePasswordVisibility(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="save-button">
+            <i class="fas fa-save button-icon"></i>
+            Update Profile
+        </button>
+    </form>
+</div>
+
+<%- include('../partials/footer.ejs') %>
+
+    <script src="scripts/account.js"></script>
+</body>
+
+</html>

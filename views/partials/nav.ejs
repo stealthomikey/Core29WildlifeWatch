@@ -1,0 +1,55 @@
+<header id="navigation">
+    <div class="nav-container">
+      <!--Nav Logo-->
+      <a href="/" class="nav-logo">
+        <img src="../../img/logo.png" alt="logo" width="210" height="29">
+      </a>
+      <!--Navigation List-->
+      <nav class="nav" role="navigation">
+        <!-- Mobile Nav Toggle -->
+        <button class="mobile-toggle">
+          <div class="cs-box" aria-hidden="true">
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+          </div>
+        </button>
+  
+        <div class="nav-wrapper">
+          <!-- Mobile Close Button -->
+          <button class="mobile-close">X</button>
+          <ul class="nav-list">
+            <li class="nav-list-item"><a href="/">Home</a></li>
+            <li class="nav-list-item"><a href="/upload">Upload</a></li>
+            <li class="nav-list-item"><a href="/data">Data</a></li>
+            <li class="nav-list-item"><a href="/leaderboard">Leaderboard</a></li>
+            <li class="nav-list-item">
+              <a href="/account">
+                Account
+                <div class="account-icon">
+                  <img src="../../img/account.png" alt="account-icon" width="29" height="29">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const mobileClose = document.querySelector('.mobile-close');
+  const navWrapper = document.querySelector('.nav-wrapper');
+
+  mobileToggle.addEventListener('click', function () {
+    navWrapper.classList.add('active');
+  });
+
+  mobileClose.addEventListener('click', function () {
+    navWrapper.classList.remove('active');
+  });
+});
+
+  </script>

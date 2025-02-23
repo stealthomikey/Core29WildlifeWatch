@@ -1,0 +1,193 @@
+/* Header and container styling */
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh; /* Ensure full viewport height without setting height */
+    background-color: #FBFFE4;
+  }
+
+
+#navigation {
+    background-color: #3D8D7A;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 2px 0px 0px #333;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo styling: size reduced */
+  .nav-logo img {
+    display: block;
+    width: 50px; /* reduced size */
+    height: 50px;
+  }
+  
+  /* Navigation styling for desktop */
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    position: relative;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list-item {
+    margin-left: 20px;
+  }
+  
+  .nav-list-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Account icon inline with text */
+  .account-icon {
+    margin-left: 8px;
+  }
+  .account-icon img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Mobile toggle button (hamburger) hidden on desktop */
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+  }
+  
+  /* Hamburger icon lines styling */
+  .mobile-toggle .cs-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+  }
+  .mobile-toggle .hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+  }
+  
+  /* Mobile Close Button (initially hidden) */
+  .mobile-close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles for mobile */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-wrap: wrap;
+    }
+  
+    /* Show hamburger button */
+    .mobile-toggle {
+      display: block;
+    }
+
+    .account-icon {
+        display: none;
+      }
+  
+    /* Hide navigation links initially */
+    .nav-wrapper {
+      display: none;
+    }
+  
+    /* Fullscreen mobile menu when active */
+    .nav-wrapper.active {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9); /* darker, nearly opaque background */
+      z-index: 9999;
+      padding-top: 50px; /* spacing from top */
+      text-align: center;
+    }
+  
+    /* Show close button in active mobile menu */
+    .nav-wrapper.active .mobile-close {
+      display: block;
+    }
+  
+    /* Vertical menu list */
+    .nav-wrapper.active .nav-list {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin-top: -100px; /* spacing from close button */
+    }
+  
+    .nav-list-item {
+      margin: 20px 0;
+    }
+  
+    /* Change link color to white for mobile menu */
+    .nav-wrapper.active .nav-list-item a {
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+
+  .second-nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #B3D8A8;
+    justify-content: center;
+  }
+  
+  .second-nav li {
+    float: left;
+  }
+  
+  .second-nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .second-nav li a:hover {
+    background-color: #A3D1C6;
+  }
+

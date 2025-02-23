@@ -1,0 +1,64 @@
+<!--
+    Created by Michael Piercey 2206222
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include the head -->
+<%- include('../partials/head.ejs', { title: 'Gallery | Wildlife Watch', cssFiles: ['/styles/gallery.css'] }) %>
+
+
+<body>
+
+
+<!-- Include the navbar -->
+<%- include('../partials/nav.ejs') %>
+<%- include('../partials/secondnav.ejs') %>
+
+<section id="gallery-379">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Your Gallery</span>
+            <h2 class="cs-title">Take a look back at some of your amazing photos!</h2>
+
+        </div>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery1.jpg" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 2-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery2.jpg" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 3-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery3.jpg" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 4-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery4.jpg" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 5-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery5.jpg" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 6-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/gallery6.jpg" alt="gallery" width="305" height="400">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer.ejs') %>
+
+    <script src="scripts/gallery.js"></script>
+</body>
+
+</html>
+
+
+
+

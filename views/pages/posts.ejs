@@ -1,0 +1,70 @@
+<!--
+    Created by Michael Piercey 2206222
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include the head -->
+<%- include('../partials/head.ejs', { title: 'Posts | Wildlife Watch', cssFiles: ['/styles/posts.css'] }) %>
+
+
+<body>
+
+
+<!-- Include the navbar -->
+<%- include('../partials/nav.ejs') %>
+<%- include('../partials/secondnav.ejs') %>
+
+<div class="wildlife-grid">
+    <!-- Post 1 -->
+    <div class="animal-post">
+        <div class="post-header">
+            <h2 class="animal-name">African Lion</h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" 
+             alt="African Lion" 
+             class="animal-image">
+        <div class="post-footer">
+            <button class="location-btn" onclick="showMap(-2.3333, 34.8333)">
+                <i class="fas fa-map-marker-alt"></i>
+                Serengeti NP, Tanzania
+            </button>
+            <p class="animal-notes">Dominant male spotted with pride near watering hole.</p>
+        </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="animal-post">
+        <div class="post-header">
+            <h2 class="animal-name">Mountain Gorilla</h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1580597156180-99660e3c3f96" 
+             alt="Mountain Gorilla" 
+             class="animal-image">
+        <div class="post-footer">
+            <button class="location-btn" onclick="showMap(-1.3733, 29.5736)">
+                <i class="fas fa-map-marker-alt"></i>
+                Bwindi Forest, Uganda
+            </button>
+            <p class="animal-notes">Family group observed with two new infants.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Map Modal -->
+<div class="map-modal" id="mapModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeMap()">&times;</span>
+        <iframe class="map-iframe" id="mapFrame"></iframe>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
+
+    <script src="scripts/posts.js"></script>
+</body>
+
+</html>
+
+

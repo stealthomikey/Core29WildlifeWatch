@@ -1,0 +1,73 @@
+<!--
+    Created by Michael Piercey 2206222
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include the head -->
+<%- include('../partials/head.ejs', { title: 'Badges | Wildlife Watch', cssFiles: ['/styles/badges.css'] }) %>
+
+
+<body>
+
+
+<!-- Include the navbar -->
+<%- include('../partials/nav.ejs') %>
+<%- include('../partials/secondnav.ejs') %>
+
+<div class="badges-container">
+    <!-- Bronze Tier -->
+    <div class="badge bronze">
+        <div class="wreath">
+            <svg viewBox="0 0 100 100">
+                <path class="leaves" d="M20,50 Q30,35 40,50 Q50,65 60,50 Q70,35 80,50 Q70,65 60,50 Q50,35 40,50 Q30,65 20,50" />
+                <path class="ribbon" d="M25,75 L50,85 L75,75 L75,70 L50,80 L25,70 Z" />
+            </svg>
+        </div>
+        <div class="medal">
+            <div class="tier-icon">③</div>
+        </div>
+        <div class="name-plate">Red Fox</div>
+    </div>
+
+    <!-- Silver Tier -->
+    <div class="badge silver">
+        <div class="wreath">
+            <svg viewBox="0 0 100 100">
+                <path class="leaves" d="M20,50 Q30,35 40,50 Q50,65 60,50 Q70,35 80,50 Q70,65 60,50 Q50,35 40,50 Q30,65 20,50" />
+                <path class="ribbon" d="M25,75 L50,85 L75,75 L75,70 L50,80 L25,70 Z" />
+            </svg>
+        </div>
+        <div class="medal">
+            <div class="tier-icon">②</div>
+        </div>
+        <div class="name-plate">Gray Wolf</div>
+    </div>
+
+    <!-- Gold Tier -->
+    <div class="badge gold">
+        <div class="wreath">
+            <svg viewBox="0 0 100 100">
+                <path class="leaves" d="M20,50 Q30,35 40,50 Q50,65 60,50 Q70,35 80,50 Q70,65 60,50 Q50,35 40,50 Q30,65 20,50" />
+                <path class="ribbon" d="M25,75 L50,85 L75,75 L75,70 L50,80 L25,70 Z" />
+            </svg>
+        </div>
+        <div class="medal">
+            <div class="tier-icon">①</div>
+        </div>
+        <div class="name-plate">Golden Eagle</div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>
+
+    <script src="scripts/badges.js"></script>
+</body>
+
+</html>
+
+
+
+
